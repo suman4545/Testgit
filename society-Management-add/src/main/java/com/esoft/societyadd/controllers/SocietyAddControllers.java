@@ -28,6 +28,8 @@ public class SocietyAddControllers {
 	@PostMapping(path="/savesociety", consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Response>saveSocietyData(RequestEntity<Society>rebody) throws BeanValidationException, CustomDbException{
 		LOGGER.info("REQUEST FOR NEW Society:"+rebody.getBody());
+		
+		System.out.println("Hiiii");
 		return new ResponseEntity<Response>(
 				socetyServiceImpl.saveSociertyData(rebody.getBody())
 				, HttpStatus.OK);
